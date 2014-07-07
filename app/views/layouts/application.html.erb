@@ -12,7 +12,11 @@
   </head>
   <body>
     <%= render 'layouts/header' %> <!-- This is called partials -->
+
     <div class="container">
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
       <%= yield %>
     </div>
   </body>
